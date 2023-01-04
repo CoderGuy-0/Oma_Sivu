@@ -3,13 +3,122 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Etusivu</title>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-    <h1>Oma Sivu</h1>
-    <p>lorem ipsum</p>
-    <p>lorem ipsum</p>
-    <p>lorem ipsum</p>
-    <p>lorem ipsum</p>
+    <video id="background-video" autoplay loop muted poster="poster.png">
+        <source src="blurred_coding editoidumpi.mp4" type="video/mp4">
+    </video>
+    <div class="languageContainer">
+        <div id="eng" class="languages british"></div>
+        <div id="fin" class="languages finnish"></div>
+        
+    </div> 
+    <div class="banner">
+        <div class="navbar">
+        </div>
+        <div class="content">
+            <h1 id="mh1" class="eng" lang="en">KARRI HELOKUMPU</h1>
+            <h1 id="mh1" class="fin" lang="fi">KARRI HELOKUMPU</h1>
+            <p id="mp" class="eng" lang="en">FRONTEND/BACKEND DEVELOPER</p>
+            <p id="mp" class="fin" lang="fi">FRONTEND/BACKEND OHJELMOIJA</p>
+
+            <h1 id="mh2" class="eng" lang="en">MY CODING PROJECTS:</h1>
+            <h1 id="mh2" class="fin" lang="fi">MINUN OHJELMOINTI PROJEKTEJANI:</h1>
+            <p id="mp1" class="eng" lang="en">Github Pages, that i created to show my skills and projects.</p>
+            <p id="mp1" class="fin" lang="fi">Tämä nettisivu jonka loin ohjelmistoprojektieni ja taitojeni esittämistä varten.</p>             
+            <p id="mp2" class="eng" lang="en">I created a Github organization called Xtreme-Engineers where we in a team created survey type of website where you can create</p>
+            <p id="mp2" class="eng" lang="en">different surveys and add questions to them and answer them and see how many people answered all these different questions.</p>
+            <p class="eng" lang="en">We created frontend using React and we created backend with Java Springboot.</p>
+            <p class="fin" lang="fi">Minä loin Github organisaation nimeltä Xtreme-Engineers jossa minä ja tiimi loimme yhdessä kysely tapaisen nettisivun missä pystyy luoda</p>
+            <p class="fin" lang="fi">erilaisia kyselyitä ja lisätä kysymyksiä kyselyihin ja vastata niihin kysymyksiin sekä nähdä kuinka moni oli vastannut mihinkin eri kysymyksiin.</p>
+            <p class="fin" lang="fi">Frontend puolen hoidimme React:illa ja backendin Java Springboot:illa.</p>
+            <div class="vertical-center">
+                <button type="button" class="eng" onclick="location.href='https://github.com/CoderGuy-0/Oma_Sivu'" lang="en"><span></span>View Github Page Source Code</button>
+                <button type="button" class="fin" onclick="location.href='https://github.com/CoderGuy-0/Oma_Sivu'" lang="fi"><span></span>Katso Github Page Lähdekoodi</button>
+                <button type="button" class="eng" onclick="location.href='https://github.com/Xtreme-Engineers'" lang="en"><span></span>View Xtreme-Engineers Profile</button>
+                <button type="button" class="fin" onclick="location.href='https://github.com/Xtreme-Engineers'" lang="fi"><span></span>Katso Xtreme-Engineers Profiili</button>
+                <button type="button" class="eng" onclick="location.href='https://github.com/CoderGuy-0'" lang="en"><span></span>View Coderguy-0 Profile</button>
+                <button type="button" class="fin" onclick="location.href='https://github.com/CoderGuy-0'" lang="fi"><span></span>Katso Coderguy-0 Profiili</button>
+        </div>
+        </div>
+    </div>
+
+
+    
+
+    <script>
+    const selectedEnglish = document.getElementById("eng");
+    const selectedFinnish = document.getElementById("fin");
+    const hidden = "display:none;";
+    const shown = "display:block;";
+    const allEnglishText = document.getElementsByClassName("eng");
+    const allFinnishText = document.getElementsByClassName("fin");
+
+    //ENGLISH > ALL OTHERS SWITCHeD OFF
+    selectedEnglish.addEventListener("click", () => {
+        selectedEnglish.classList.add("langSelected");
+        selectedFinnish.classList.remove("langSelected");
+
+        showEnglishText();
+        localStorage.setItem("languageActive", "english");
+    });
+
+    //FINNISH > ALL OTHERS SWITCHeD OFF
+    selectedFinnish.addEventListener("click", () => {
+        selectedFinnish.classList.add("langSelected");
+        selectedEnglish.classList.remove("langSelected");
+
+        showFinnishText();
+        localStorage.setItem("languageActive", "finnish");
+    });
+
+    //LOCAL STORAGE SWITCH CASE
+    switch (localStorage.getItem("languageActive")) {
+
+        case "english":
+            selectedEnglish.classList.add("langSelected");
+            showEnglishText();
+            break;
+
+        case "finnish":
+            selectedFinnish.classList.add("langSelected");
+            showFinnishText();
+            break;
+
+
+        default:
+            //default SHOW ENGLISH ONLY
+            // DEFAULT > NO LOCAL STORAGE EXISTS
+            selectedEnglish.classList.add("langSelected");
+            showEnglishText();
+    } 
+
+    //SHOW ALL ENGLISH TEXT
+    function showEnglishText() {
+        for (element in allEnglishText) {
+            allEnglishText[element].style = shown;
+        }
+        for (element in allFinnishText) {
+            allFinnishText[element].style = hidden;
+        }
+    }
+    // SHOW ALL FINNISH TEXT
+    function showFinnishText() {
+
+        for (element in allEnglishText) {
+            allEnglishText[element].style = hidden;
+        }
+
+        for (element in allFinnishText) {
+            allFinnishText[element].style = shown;
+        }
+        
+    }
+
+
+    </script>
 </body>
 </html>

@@ -1,0 +1,248 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.vertical-center{
+    margin: 0;
+  position: absolute;
+  top: 117%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+#background-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 0;
+  }
+  @media (max-width: 750px) {
+    #background-video { display: none; }
+    body {
+      background: url("poster.png") no-repeat;
+      background-size: cover;
+    }
+}
+.navbar{
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.logo{
+    width: 120px;
+    cursor: pointer;
+}
+.navbar ul li{
+    list-style: none;
+    display:block;
+    margin: 20px;
+    position: relative;
+    
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+
+}
+.navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #967000;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+
+}
+.navbar ul li:hover::after{
+    width: 100%;
+}
+.content{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color:rgb(250, 250, 250);
+
+}
+.content h1{
+    font-size: 70px;
+    margin-top: 80px;
+    font-family: 'Trebuchet MS';
+    font-weight: bold;
+
+
+}
+.content p{
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+}
+button{
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #967000;
+    background: transparent;
+    color:#fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    justify-content: end;
+}
+
+button:hover span{
+    width: 100%;
+}
+button:hover{
+    border: none;
+}
+form label{
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+}
+form select{
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #967000;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+form input{
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 15px;
+    font-weight: bold;
+    border: 2px solid #967000;
+    position: relative;
+    overflow: hidden;
+}
+/* Customize the label (the container) */
+.container{
+    display:contents;
+  position: relative;
+  padding-left: 5px;
+  margin-bottom: 1px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* Hide the browser's default checkbox */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 20;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+  }
+  /* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a orange background */
+  .container input:checked ~ .checkmark {
+    background-color: #967000;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+span{
+    background:#967000;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+.languageContainer{
+    display: flex;
+    justify-content:end;
+    overflow: visible;
+    height: 3rem;
+    font-size: small;
+    margin: auto;
+    
+}
+.languages{
+    display: flex;
+    align-items: center;
+    margin: 2rem;
+    padding: 0.5rem;
+    color: #fff;
+    cursor:pointer;
+}
+.languages::before{
+    content: '';
+    display: block;
+    width: 32px;
+    height: 32px;
+    z-index: 2;
+}
+.british::before{
+    background:url("gb.svg");
+}
+.finnish::before{
+    background:url("fi.svg");
+}
+

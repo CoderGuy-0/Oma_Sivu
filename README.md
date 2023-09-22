@@ -11,10 +11,13 @@
 ## About This Project
  This Project is created for the sole reason of showing my current Knowledge and portfolio of coding examples i have done or collaberated with.
 ### Used technologies
-- [HTML] [Javascript]
+- [HTML]
+- [Javascript]
+- [CSS]
 
 ## Creator
 * [Karri Helokumpu](https://github.com/Karri966)
 
 [HTML]: https://en.wikipedia.org/wiki/HTML
 [Javascript]: https://en.wikipedia.org/wiki/JavaScript
+[CSS]: https://en.wikipedia.org/wiki/CSS
